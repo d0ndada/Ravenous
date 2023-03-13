@@ -17,6 +17,14 @@ export const SearchBar = () => {
         setSortBy(sortByOption)
     }
 
+    const handleTermChange = (e) => {
+        setTerm(e.target.value)
+    }
+
+    const handleLocationChange = (e) => {
+        setLocation(e.target.value)
+    }
+
     const getSortByClass = (sortByOption) => {
         return sortBy ===  sortByOption ? 'active' : '';
     }
