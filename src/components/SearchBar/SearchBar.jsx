@@ -24,7 +24,11 @@ export const SearchBar = () => {
     const sortByOptions = () => {
         return Object.keys(sortByOptions).map(sortByOption => {
             let sortByOptionsValue = sortByOptions[sortByOption];
-            return <li key={sortByOptionsValue} >{sortByOption}</li>
+            return <li 
+            className={getSortByClass} 
+            key={sortByOptionsValue}
+            onClick={() => handleSortByChange(sortByOptionsValue)}
+            >{sortByOption}</li>
         })
     };
 
