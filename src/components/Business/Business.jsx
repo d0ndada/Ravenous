@@ -7,7 +7,7 @@ export const Business = (props) => {
         <div className="image-container">
             <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt='' />
         </div>
-        <h2>{business.name}</h2>
+        <h2>{props.business.name}</h2>
         <div className="Business-information">
             <div className="Business-address">
                 <p>{props.business.address}</p>
