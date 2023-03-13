@@ -14,7 +14,7 @@ export const SearchBar = () => {
     const [sortBy, setSortBy] = useState('best_match');
 
     const handleSortByChange = (sortByOption) => {
-        d
+        setSortBy(sortByOption)
     }
 
     const getSortByClass = (sortByOption) => {
