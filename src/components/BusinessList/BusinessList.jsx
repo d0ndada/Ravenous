@@ -1,21 +1,20 @@
 import React from 'react';
 import './BusinessList.css';
-import { Business } from '../Business/Business';
 
-export const BusinessList = (props) => {
-    const displayBusiness = () => {
-        return props.bus.map(business => {
-            return <Business business={business} key={business.id} />
-        });
-    } 
+import Business from '../Business/Business';
 
+class BusinessList extends React.Component {
+  render() {
     return (
-        <div className="BusinessList">
-            {
-               displayBusiness
-            }
-        </div>
-    )
-
+      <div className="BusinessList">
+        {
+          this.props.businesses.map(business => {
+            return <Business business={business} key={business.id} />
+          })
+        }
+      </div>
+    );
+  }
 }
+
 export default BusinessList;
