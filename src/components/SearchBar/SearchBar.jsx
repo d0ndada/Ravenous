@@ -6,6 +6,7 @@ const SearchBar = (props) => {
   const [location, setLocation] = useState('');
   const [sortBy, setSortBy] = useState('best_match');
 
+
   const sortByOptions = {
     'Best Match': 'best_match',
     'Highest Rated': 'rating',
@@ -23,17 +24,21 @@ const SearchBar = (props) => {
     setSortBy(sortByOption);
   };
 
-  const handleTermChange = (event) => {
-    setTerm(event.target.value);
+  const handleTermChange = (e) => {
+    setTerm(e.target.value);
   };
 
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+
   };
 
-  const handleSearch = (event) => {
-    props.searchYelp(term, location, sortBy);
-    event.preventDefault();
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (term && location) {
+      props.searchYelp(term, location, sortBy);
+    }
+  
   };
 
   const renderSortByOptions = () => {
@@ -61,7 +66,7 @@ const SearchBar = (props) => {
         <input placeholder="Where?" onChange={handleLocationChange} />
       </div>
       <div className="SearchBar-submit">
-        <a onClick={handleSearch}>Let's Go</a>
+        <a onClick={handleSearch} >Let's Go</a>
       </div>
     </div>
   );
