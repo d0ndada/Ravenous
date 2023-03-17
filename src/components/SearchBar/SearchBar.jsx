@@ -66,7 +66,7 @@ const SearchBar = (props) => {
         <input placeholder="Where?" onChange={handleLocationChange} />
       </div>
       <div className="SearchBar-submit">
-        <a onClick={handleSearch} >Let's Go</a>
+        <button onClick={handleSearch} >Let's Go</button>
       </div>
     </div>
   );

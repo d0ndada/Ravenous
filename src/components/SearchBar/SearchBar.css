@@ -6,6 +6,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 25rem;
+    border-radius: 7px;
+    box-shadow: inset 1px -1px 20px 18px black;
   }
   
   .SearchBar-sort-options ul {
@@ -61,7 +63,7 @@
     text-align: center;
   }
   
-  .SearchBar-submit a{
+  .SearchBar-submit button{
     border-radius: 4px;
     padding: .72rem 1.7rem;
     background-color: #cca353;
@@ -70,7 +72,7 @@
     transition: background-color .5s;
   }
   
-  .SearchBar-submit a:hover {
+  .SearchBar-submit button:hover {
     cursor: pointer;
     background-color: #a7874b;
   }

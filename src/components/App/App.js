@@ -9,17 +9,24 @@ import Yelp from '../../util/Yelp';
 function App() {
   const [businesses, setBusinesses] = useState([]);
 
+  function update(newbus) {
+    setBusinesses(newbus)
+  }
+  
   const searchYelp = (term, location, sortBy) => {
+    console.log(searchYelp.term)
     Yelp.search(term, location, sortBy).then(businesses => {
-      setBusinesses(businesses);
+      update(businesses)
     });
   };
 
   return (
     <div className="App">
-      <h1>ravenous</h1>
+      <h1>Ravenous</h1>
       <SearchBar searchYelp={searchYelp} />
+      
       <BusinessList businesses={businesses} />
+ 
     </div>
   );
 }
